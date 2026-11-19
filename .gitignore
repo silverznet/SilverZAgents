@@ -1,0 +1,20 @@
+# Distribution repository: application binaries belong in Releases.
+*.exe
+*.dll
+*.pyd
+*.zip
+*.gguf
+*.bin
+*.sqlite*
+*.log
+.env*
+credentials*
+settings.json
+__pycache__/
+*.pyc
+vendor/
+runtime/
+models/
+data/
+source/
+build/

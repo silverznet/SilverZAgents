@@ -1,0 +1,7 @@
+Copyright (c) 2026 SilverZ.Net. All rights reserved.
+Developed by Pham Hong Quang (Phạm Hồng Quang).
+
+This repository distributes public documentation and proprietary SilverZAgents application downloads. Publication on GitHub does not grant an open-source license to the application, its private source code, encrypted resources or trademarks.
+
+For permission, usage terms or commercial licensing, contact hello@silverz.net.
+Third-party components remain subject to their respective licenses and notices included with the distribution. This notice does not replace or restrict those third-party licenses.
