@@ -4,7 +4,13 @@
 
 **Đây là kho phân phối chính thức, không phải kho source mở.** Tải bộ cài `.exe` tại [Releases](https://github.com/silverznet/SilverZAgents/releases/tag/v6.0.0-preview.1). Các tệp “Source code” do GitHub tự tạo chỉ chứa tài liệu công khai của kho này.
 
-## Big Update · 6.0.0 Preview 1\n\nThêm quản lý Trang/Profile: chạy riêng hoặc sau mỗi vòng tương tác thành công; gán đúng nơi quản lý theo từng kết nối hồ sơ; chọn chỉ kiểm tra, lưu nháp hoặc tự trả lời. Tin nhắn mặc định tắt. FAQ đã duyệt dùng chung giúp giảm gọi AI, còn hội thoại và cache phản hồi được tách theo nơi quản lý.\n\nSau cập nhật, tải lại extension **3.1.0** trong từng hồ sơ. Vào Nhiệm vụ → Tương tác & Quản lý Trang/Profile để gán nơi quản lý và cấu hình. Nên bắt đầu bằng soạn nháp. Giao diện hộp thư chưa xác minh được sẽ báo cần kiểm tra, không tự gửi. [Hướng dẫn quản lý](MANAGEMENT.md).\n\n## Chức năng
+## Big Update · 6.0.0 Preview 1
+
+Thêm quản lý Trang/Profile: chạy riêng hoặc sau mỗi vòng tương tác thành công; gán đúng nơi quản lý theo từng kết nối hồ sơ; chọn chỉ kiểm tra, lưu nháp hoặc tự trả lời. Tin nhắn mặc định tắt. FAQ đã duyệt dùng chung giúp giảm gọi AI, còn hội thoại và cache phản hồi được tách theo nơi quản lý.
+
+Sau cập nhật, tải lại extension **3.1.0** trong từng hồ sơ. Vào **Nhiệm vụ → Tương tác & Quản lý Trang/Profile** để gán nơi quản lý và cấu hình. Nên bắt đầu bằng soạn nháp. Giao diện hộp thư chưa xác minh được sẽ báo cần kiểm tra, không tự gửi. Xem [Hướng dẫn quản lý](MANAGEMENT.md).
+
+## Chức năng
 
 - Like, Like/Tim xen kẽ hoặc chọn cảm xúc ngẫu nhiên; bình luận bằng nội dung dựng sẵn hoặc AI theo ngữ cảnh.
 - Đăng chữ, ảnh, nhiều ảnh, chữ + ảnh, URL và Share vào danh sách nhóm; số bài mỗi nhóm tùy chỉnh.
