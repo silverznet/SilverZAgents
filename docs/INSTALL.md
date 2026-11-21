@@ -16,7 +16,7 @@ Get the `.exe` installer and `SHA256SUMS.txt` from [official Releases](https://g
 In PowerShell, from the download folder:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\SilverZAgents-5.5.1-Setup.exe
+Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.0.0-preview.1-Setup.exe
 ```
 
 Compare the complete hash with `SHA256SUMS.txt`. This verifies that your download matches the published asset; it is not Windows publisher certification. Do not disable system protections to install the application.
@@ -32,14 +32,14 @@ The `.exe` is a bootstrap installer, not an offline bundle of Python, every depe
 From Command Prompt, inspect the installer first:
 
 ```cmd
-SilverZAgents-5.5.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
-SilverZAgents-5.5.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.0.0-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.0.0-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
 ```
 
 For unattended installation, first review the [Python license](https://docs.python.org/3/license.html). The following flag explicitly accepts it if Python must be installed:
 
 ```cmd
-SilverZAgents-5.5.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
+SilverZAgents-6.0.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
 ```
 
 Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `--no-shortcut` skips the desktop shortcut. A zero exit code indicates successful setup; check the log for diagnosis or errors.
@@ -49,12 +49,12 @@ Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `
 1. Open the browser's extension management page yourself.
 2. Enable Developer mode and load the installed application's `extension` folder as an unpacked extension.
 3. Repeat for each intended browser profile. Use the same folder; do not copy a separate extension tree for every browser.
-4. Check **extension 3.0.3**. After an update, Reload it in each profile where it was already running.
+4. Check **extension 3.1.0**. After an update, Reload it in each profile where it was already running.
 5. Keep your existing Facebook login in the browser. Open the intended tab and start a small test task from the panel.
 
 The application does not import/export cookies, passwords or browser profiles. When idle/finished, the extension removes its own overlays and detaches debugging while retaining readiness for the next explicit run. Manual debugger cancellation requires a new start; restrictions/login/CAPTCHA may require you to intervene.
 
-## Updates and troubleshooting
+## Configure Page / Profile management\n\nManagement requires extension **3.1.0**. Reload it in every participating browser profile, then assign the exact public Page/Profile URL and current actor identity under Task → Interaction & Page / Profile management. Start in **draft** mode with a small limit. Inbox remains off until deliberately enabled with the exact permitted inbox URL. The app does not switch Facebook identities. See the [management guide](MANAGEMENT.md) for bounds, privacy and unsupported layouts.\n\n## Updates and troubleshooting
 
 - Stop active jobs and exit fully before updating. Do not delete `data` to update. Back up important application data locally first; never upload it to a public issue.
 - Install new versions manually from Releases. This preview does not auto-update from GitHub.
