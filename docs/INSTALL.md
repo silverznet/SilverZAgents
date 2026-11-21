@@ -54,7 +54,9 @@ Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `
 
 The application does not import/export cookies, passwords or browser profiles. When idle/finished, the extension removes its own overlays and detaches debugging while retaining readiness for the next explicit run. Manual debugger cancellation requires a new start; restrictions/login/CAPTCHA may require you to intervene.
 
-## Configure Page / Profile management\n\nManagement requires extension **3.1.0**. Reload it in every participating browser profile, then assign the exact public Page/Profile URL and current actor identity under Task → Interaction & Page / Profile management. Start in **draft** mode with a small limit. Inbox remains off until deliberately enabled with the exact permitted inbox URL. The app does not switch Facebook identities. See the [management guide](MANAGEMENT.md) for bounds, privacy and unsupported layouts.\n\n## Updates and troubleshooting
+## Configure Page/Profile management
+Management requires extension **3.1.0**. Reload the extension in every participating browser profile, then assign the exact public Page/Profile URL and current actor identity under **Task → Interaction & Page/Profile management**. Start in **draft** mode with a small limit. Inbox remains off until deliberately enabled with the exact permitted inbox URL. The app does not switch Facebook identities. See the [management guide](MANAGEMENT.md) for bounds, privacy, and unsupported layouts.
+## Updates and troubleshooting
 
 - Stop active jobs and exit fully before updating. Do not delete `data` to update. Back up important application data locally first; never upload it to a public issue.
 - Install new versions manually from Releases. This preview does not auto-update from GitHub.
