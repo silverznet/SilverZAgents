@@ -31,3 +31,12 @@ Draft view is read-only/copy for manual review. Switching to auto does not autom
 Only attributable rendered posts/comments and recognized controls are processed. Hidden/unloaded content, insufficient approved facts, changed actor/thread/context, account restrictions and unsupported layouts can require manual handling. Do not use auto-reply for cases requiring human judgment without review.
 
 [Installation](INSTALL.md) · [Privacy](PRIVACY.md) · [Support](../SUPPORT.md)
+
+
+## 6.4 routine and Business Suite
+
+Choose interaction only, management only, interaction → management, or **Manage → Groups → Home**. Assign the exact asset to each connected profile. Routine phases have separate limits; global Stop/deadlines remain authoritative. Reload extension **3.2.0** in each browser profile.
+
+Business Suite comment handling is configured separately from opt-in Inbox. Like/reaction and reply/draft/check behavior follow the selected delivery policy. Draft mode does not send a reply or a combined reaction. Moving a thread to Done requires complete visible work and verified state; drafts, incomplete scans and uncertain sends must not be marked Done. New comment batches can be processed without replaying a previous batch.
+
+FAQ and approved business context may be shared explicitly; customer conversation history is not pooled for training. Real Messenger reading/sending remains layout-dependent and has not been fully verified. Test a small draft-only session first and review output.
