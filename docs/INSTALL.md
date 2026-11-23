@@ -7,7 +7,7 @@
 - This build uses CPython **3.14.10 or a compatible newer 3.14 patch**, x64, with pip and Tk. Python 3.15/3.13, free-threaded and debug builds are not compatible with these compiled modules.
 - The installer detects compatible Python and reuses it. If only an incompatible Python exists, it keeps that installation and can install a private compatible runtime in the chosen application folder after Python-license acceptance.
 - WebView2 Runtime is recommended for the main panel; the application has a Tk compatibility fallback.
-- Local AI models require additional disk/RAM and may benefit from a GPU. Models are not bundled; start with a small task and measure performance on your PC.
+- Local AI models require additional disk/RAM and may benefit from a GPU. Model weights are downloaded separately during Setup (Qwen by default); start with a small task and measure performance on your PC.
 
 ## Download and verify
 
@@ -16,7 +16,7 @@ Get the `.exe` installer and `SHA256SUMS.txt` from [official Releases](https://g
 In PowerShell, from the download folder:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.0.0-preview.1-Setup.exe
+Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.4.0-preview.1-Setup.exe
 ```
 
 Compare the complete hash with `SHA256SUMS.txt`. This verifies that your download matches the published asset; it is not Windows publisher certification. Do not disable system protections to install the application.
@@ -32,14 +32,14 @@ The `.exe` is a bootstrap installer, not an offline bundle of Python, every depe
 From Command Prompt, inspect the installer first:
 
 ```cmd
-SilverZAgents-6.0.0-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
-SilverZAgents-6.0.0-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.4.0-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.4.0-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
 ```
 
 For unattended installation, first review the [Python license](https://docs.python.org/3/license.html). The following flag explicitly accepts it if Python must be installed:
 
 ```cmd
-SilverZAgents-6.0.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
+SilverZAgents-6.4.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
 ```
 
 Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `--no-shortcut` skips the desktop shortcut. A zero exit code indicates successful setup; check the log for diagnosis or errors.
@@ -68,3 +68,30 @@ Management requires extension **3.1.0**. Reload the extension in every participa
 - **Close button:** X minimizes to the taskbar. Use Settings → Exit application for a full exit.
 
 See [Support](../SUPPORT.md) for a sanitized bug-report checklist.
+
+
+## Offline model installation (6.4)
+
+Setup defaults to **Qwen3 4B** and finishes only after required runtime/model files are present and download checksums match. Model setup errors are visible in the installer log and fail installation; they must not appear as successful completion.
+
+| Setup choice | Files downloaded separately |
+|---|---|
+| Qwen (default) | Qwen3 4B text model and llama.cpp runtime |
+| DeepSeek | DeepSeek R1 Distill Qwen 1.5B and runtime |
+| Vision | Gemma 3 4B, image projector and runtime |
+| None | No model download; existing selection retained |
+
+Use the model selector in graphical Setup, or add `--model qwen`, `--model deepseek`, `--model vision` or `--model none` in CMD. Omitting this flag selects Qwen. For example:
+
+```cmd
+start /wait "" SilverZAgents-6.4.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --model qwen --no-shortcut --log "D:\SilverZSetup-6.4.log"
+echo Exit code: %ERRORLEVEL%
+```
+
+Add `--accept-python-license` only after reviewing the Python license, if no compatible runtime is installed. Existing Python 3.15 is preserved; this native build needs compatible CPython 3.14.10+ x64. Setup does not downgrade the system interpreter or change its PATH.
+
+Keep Internet connected and allow several GB for models and dependencies. Verified cached downloads are reused; interrupted downloads can resume. Reload the installed extension **3.2.0** in every intended browser profile. Models can also be installed/repaired later from the Offline panel.
+
+Stop jobs and exit fully before updating an existing client. Personal browser profiles and login sessions remain browser-owned. Automatic client updates are not included.
+
+Setup is a graphical EXE with a command-line mode. Use `start /wait ""` in CMD (or `Start-Process -Wait -PassThru` in PowerShell) when a script must wait for completion and inspect the final exit code. A returned shell prompt by itself is not proof of completed model installation.
