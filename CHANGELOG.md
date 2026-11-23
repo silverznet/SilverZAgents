@@ -1,5 +1,17 @@
 # Changelog
 
+## 6.4.0 Preview 1 — 2026-11-23 · Big Update
+
+- Modular workflow execution with versioned registration, isolated options, normalized module counters and shared phase/deadline handling.
+- Manage → Groups → Home routine; Business Suite comment handling; default-off Inbox.
+- Shared Gemini rotation/admission and verified local-runtime ownership across worker stops.
+- Autosave/chooser recovery, missing scope fingerprints, isolated form status and bounded/redacted worker output.
+- Default Qwen model installation and optional DeepSeek/Vision/None choices; model setup output/error propagation fixed for unattended setup.
+- Latest desktop UI: session overview ring, independent cursor/text colors and segmented hover/focus feedback with reduced-motion support.
+- Extension 3.2.0. Existing browser profiles remain user-owned. No auto-updater or hosted brain is included.
+- Protected Windows installation and artifact checks are described in the release notes; live Facebook/Messenger and clean-PC coverage remain limited.
+
+
 ## 6.0.0 Preview 1 — 2026-11-21 · Big Update
 
 Includes Core management and the subsequent 6.0.0-dev.2 UI refinements; extension **3.1.0**.
