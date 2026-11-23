@@ -2,13 +2,17 @@
 
 Ứng dụng Windows hỗ trợ cấu hình và theo dõi các tác vụ Facebook trên những hồ sơ trình duyệt bạn đã đăng nhập.
 
-**Đây là kho phân phối chính thức, không phải kho source mở.** Tải bộ cài `.exe` tại [Releases](https://github.com/silverznet/SilverZAgents/releases/tag/v6.0.0-preview.1). Các tệp “Source code” do GitHub tự tạo chỉ chứa tài liệu công khai của kho này.
+**Đây là kho phân phối chính thức, không phải kho source mở.** Tải bộ cài `.exe` tại [Releases](https://github.com/silverznet/SilverZAgents/releases/tag/v6.4.0-preview.1). Các tệp “Source code” do GitHub tự tạo chỉ chứa tài liệu công khai của kho này.
 
-## Big Update · 6.0.0 Preview 1
+## Big Update · 6.4.0 Preview 1
 
-Thêm quản lý Trang/Profile: chạy riêng hoặc sau mỗi vòng tương tác thành công; gán đúng nơi quản lý theo từng kết nối hồ sơ; chọn chỉ kiểm tra, lưu nháp hoặc tự trả lời. Tin nhắn mặc định tắt. FAQ đã duyệt dùng chung giúp giảm gọi AI, còn hội thoại và cache phản hồi được tách theo nơi quản lý.
+- Chuẩn hóa Core theo module, dùng chung bộ thực thi, cấu hình riêng và kiểm tra hợp lệ.
+- Tương tác, đăng nhóm, quản lý Page/Profile; tùy chọn chu trình **Quản lý → Nhóm → Trang chủ**.
+- Giao diện mới, tổng quan phiên dạng vòng tiến độ, tự lưu, sửa lỗi bộ chọn bị kẹt; màu chữ/con trỏ và hiệu ứng hỗ trợ giảm chuyển động.
+- Setup tự tải **Qwen mặc định**; có lựa chọn DeepSeek, model đọc ảnh hoặc không tải. Model được tải riêng và kiểm tra SHA-256, không nhúng hàng GB vào EXE.
+- Cải thiện điều phối Gemini và model local dùng chung giữa các hồ sơ. Không cam kết tăng tốc độ suy luận trên mọi máy.
 
-Sau cập nhật, tải lại extension **3.1.0** trong từng hồ sơ. Vào **Nhiệm vụ → Tương tác & Quản lý Trang/Profile** để gán nơi quản lý và cấu hình. Nên bắt đầu bằng soạn nháp. Giao diện hộp thư chưa xác minh được sẽ báo cần kiểm tra, không tự gửi. Xem [Hướng dẫn quản lý](MANAGEMENT.md).
+Sau cập nhật, tải lại extension **3.2.0** trong từng hồ sơ. Tin nhắn mặc định tắt; nên bắt đầu quản lý bằng chế độ nháp và giới hạn nhỏ. Khả năng gửi Messenger thực tế chưa được xác minh đầy đủ. [Hướng dẫn cài đặt/model](INSTALL.md) · [Quản lý](MANAGEMENT.md).
 
 ## Chức năng
 
@@ -21,17 +25,17 @@ Sau cập nhật, tải lại extension **3.1.0** trong từng hồ sơ. Vào **
 
 ## Cài đặt
 
-1. Tải `SilverZAgents-6.0.0-preview.1-Setup.exe` và `SHA256SUMS.txt`, kiểm tra mã SHA-256.
+1. Tải `SilverZAgents-6.4.0-preview.1-Setup.exe` và `SHA256SUMS.txt`, kiểm tra mã SHA-256.
 2. Chạy bộ cài, chọn thư mục riêng như `D:\Program Files\SilverZAgentsClient`. Cần Internet nếu thiếu runtime hoặc thư viện.
 3. Bộ cài dùng lại Python 3.14 x64 tương thích. Nếu chỉ có Python 3.15/nhánh khác, bộ cài giữ nguyên và có thể cài runtime riêng sau khi bạn chấp nhận giấy phép Python.
-4. Cài extension từ cùng một thư mục `extension` vào từng hồ sơ muốn dùng, kiểm tra bản **3.1.0**.
+4. Cài extension từ cùng một thư mục `extension` vào từng hồ sơ muốn dùng, kiểm tra bản **3.2.0**.
 5. Mở tab Facebook bằng tài khoản của bạn, đặt tác vụ nhỏ rồi chủ động bấm bắt đầu.
 
 Xem [hướng dẫn chi tiết và cài bằng CMD](INSTALL.md). Bấm X chỉ thu nhỏ xuống taskbar; thoát hẳn tại **Cài đặt → Thoát hoàn toàn**.
 
 ## Trạng thái & dữ liệu
 
-Bản **6.0.0 Preview 1** đang được hoàn thiện. Đã kiểm thử tự động/mô phỏng; chưa nghiệm thu mọi PC khách và mọi giao diện Facebook thực tế. Không bảo đảm bình luận đã xuất hiện chỉ vì đã gửi Enter, cũng không bảo đảm bài được quản trị nhóm phê duyệt.
+Bản **6.4.0 Preview 1** đang được hoàn thiện. Đã kiểm thử tự động/mô phỏng; chưa nghiệm thu mọi PC khách và mọi giao diện Facebook thực tế. Không bảo đảm bình luận đã xuất hiện chỉ vì đã gửi Enter, cũng không bảo đảm bài được quản trị nhóm phê duyệt.
 
 Online gửi phần ngữ cảnh cần thiết tới API bạn chọn và có thể phát sinh phí theo nhà cung cấp. Offline suy luận tại máy sau khi tải model; Facebook vẫn cần mạng. Không kèm tài khoản hay API key. Hồ sơ và đăng nhập thuộc trình duyệt của người dùng. Chia sẻ thống kê kiến thức là tùy chọn, mặc định tắt; không có dịch vụ máy chủ đi kèm bản này.
 
