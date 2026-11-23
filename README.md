@@ -10,18 +10,24 @@ SilverZAgents helps you configure and supervise repeatable Facebook tasks using 
 
 **This is the official distribution and documentation repository.** The proprietary application source is not published here. Download the protected Windows installer from **Releases**. GitHub's automatically generated “Source code” archives contain this repository's public documentation, not the application.
 
-## Big Update · 6.0.0 Preview 1
+## Big Update · 6.4.0 Preview 1
 
-Page/Profile management now runs independently or after a successful interaction cycle. Assign the exact target to each connected browser profile; choose inspect, draft or auto-reply separately for comments and optional inbox handling. Inbox is **off by default**. [Management guide](docs/MANAGEMENT.md).
+This release includes the modular workflow Core, the latest compact desktop interface, automatic settings persistence and recovery, per-profile execution controls, and extension **3.2.0**.
 
-Approved FAQ can be reused without AI calls. Generated replies use an asset-scoped encrypted local cache; private conversations are not shared between accounts. The conservative inbox adapter is not verified against every live Facebook layout and will block uncertain sends.
+- Compose existing interaction, group publishing and Page/Profile management workflows through one execution engine. Optional routine: **Manage → Groups → Home**, with separate phase limits.
+- Qwen Offline is selected by default in Setup. Choose Qwen, DeepSeek Distill, image-capable Gemma, or explicitly skip model downloads. Weights download separately, are SHA-256 verified and are not embedded in the installer.
+- Improved shared Gemini request rotation/admission and shared local-runtime ownership; one profile stopping must not terminate the verified model another profile uses.
+- Autosave and selector recovery, a session overview ring, independent cursor/text colors and accessible segmented-control feedback.
+
+Inbox is **off by default**. Draft-only delivery does not send replies or combined reactions. Uncertain writes are not automatically replayed. Business Suite/Inbox compatibility varies by Facebook layout; complete live Messenger delivery remains unverified. [Management guide](docs/MANAGEMENT.md).
 
 ## Capabilities
 
 | Area | Available workflows |
 |---|---|
 | Reactions & comments | Like, alternating Like/Love, or selected random reactions; prepared text or contextual AI comments |
-| Page / Profile management | Explicit per-connection assignments, relevant notifications, owned-post comment replies, optional inbox, encrypted drafts and uncertain-send review |\n| Group publishing | Status, images, multiple images, text + images, website/Facebook URLs, and Facebook Share workflows |
+| Page / Profile management | Explicit per-connection assignments, relevant notifications, owned-post comment replies, optional inbox, encrypted drafts and uncertain-send review |
+| Group publishing | Status, images, multiple images, text + images, website/Facebook URLs, and Facebook Share workflows |
 | Multiple profiles | Concurrent connected profiles across Chrome, Edge, Brave and Cốc Cốc; independent job details and limits |
 | Run control | One run or loops, time/item limits, scheduled breaks, total stop limits, independent Home or Groups interaction scope and refresh |
 | AI options | Configured online providers with fallback, or local Qwen/DeepSeek Distill/text-and-image model options |
@@ -33,8 +39,8 @@ Browser/website behavior may vary by version, account, permissions and Facebook 
 
 ## Get started
 
-1. Download **SilverZAgents-6.0.0-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.0.0 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.0.0-preview.1).
-2. Verify the download and run the installer. Internet access is required for missing Python/dependencies. See [installation](docs/INSTALL.md).
+1. Download **SilverZAgents-6.4.0-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.4.0 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.4.0-preview.1).
+2. Verify the download and run the installer. Internet access is required for missing Python/dependencies and the selected Offline model. See [installation](docs/INSTALL.md).
 3. Enable the included extension in each browser profile you intend to use. All profiles on that PC can use the same installed `extension` folder.
 4. Open a supported Facebook tab in your existing signed-in profile, configure a small task, and start the session yourself.
 
@@ -45,12 +51,13 @@ There are no bundled accounts or API keys. Facebook browser sessions remain in t
 - **Online:** Gemini multi-key → DeepSeek → Grok → OpenAI, using only providers configured by the user and the selected starting point. Provider fees, limits and availability apply.
 - **Offline:** local inference after the chosen model/runtime is installed. Models are separate downloads; CPU/GPU/RAM determine speed. Facebook and initial downloads still require Internet.
 - Prepared text and image-only publishing do not need an AI call for content generation.
-- When optional inbox management is enabled, the necessary customer-message context may also be sent to the selected online provider.\n- Selected post text, comments or images needed for a task may be sent to the chosen online AI provider. Task history, memory and logs are stored locally. See [privacy](docs/PRIVACY.md).
+- When optional inbox management is enabled, the necessary customer-message context may also be sent to the selected online provider.
+- Selected post text, comments or images needed for a task may be sent to the chosen online AI provider. Task history, memory and logs are stored locally. See [privacy](docs/PRIVACY.md).
 - Shared-knowledge synchronization is optional and disabled by default; this preview does not include a hosted service.
 
 ## Preview status
 
-6.0.0 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
+6.4.0 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
 
 Core Python modules are compiled and selected resources are encrypted; browser extension code remains inspectable. Code protection is not a guarantee against reverse engineering. Internal payload signatures are not a Windows Authenticode certificate; Windows may display publisher/reputation warnings. Confirm the source and checksum according to your organization's installation policy.
 
