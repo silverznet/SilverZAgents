@@ -1,5 +1,16 @@
 # Changelog
 
+## 6.7.0 Preview 1 — 2026-11-25 · Big Update
+
+- Approved desktop presentation from 6.7.0-dev.4; existing business workflows retained.
+- Compact workspace/session overview and live-job selection using actual job counters.
+- Central Play/Stop action, truthful disabled/stopping states and reduced-motion-safe activity feedback.
+- Revised navigation, semantic hardware icons/meters, clock, light/dark appearance and compact About.
+- Source autosave, frozen profile settings, module execution and browser-owned sessions preserved.
+- Qwen remains the default separate model download; optional DeepSeek/Vision/None and compatible-runtime detection retained.
+- Extension 3.2.0. No automatic client updater, account/login management or new business workflow added.
+
+
 ## 6.4.0 Preview 1 — 2026-11-23 · Big Update
 
 - Modular workflow execution with versioned registration, isolated options, normalized module counters and shared phase/deadline handling.
