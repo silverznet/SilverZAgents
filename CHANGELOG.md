@@ -1,5 +1,15 @@
 # Changelog
 
+## 6.7.2 Preview 1 — 2026-11-27 · Startup hotfix
+
+- Fix protected-client startup error `brandIcons is not defined`: include the omitted brand_icons.js in the encrypted resource vault.
+- Include the existing third-party browser-logo attribution notice in the actual payload.
+- Require compiled-interface browser rendering/navigation checks, including real settings and browser/reaction badges.
+- Validate HTML/CSS/image dependencies and reject incomplete/obsolete input or module catalogs before packaging.
+- Preserve the English Upgrade installer, existing client settings/data and selected-model repair behavior.
+- Extension remains 3.2.0. No business workflow or interface redesign added.
+
+
 ## 6.7.1 Preview 1 — 2026-11-27
 
 - English installer and runtime diagnostics, with an explicit Upgrade action for signed installations at the chosen destination.
