@@ -10,16 +10,18 @@ SilverZAgents helps you configure and supervise repeatable Facebook tasks using 
 
 **This is the official distribution and documentation repository.** The proprietary application source is not published here. Download the protected Windows installer from **Releases**. GitHub's automatically generated “Source code” archives contain this repository's public documentation, not the application.
 
-## Big Update · 6.7.0 Preview 1
+## 6.7.1 Preview 1
 
-This release packages the approved desktop redesign while retaining the existing modular workflow Core. No additional business workflow is introduced.
+This maintenance release includes the latest approved interface refinements, comment-reply fixes and an English installer with an explicit **Upgrade** action.
 
-- Compact session workspace with overview/live-job selection, truthful progress and CPU/GPU/RAM displays.
-- Central Play/Stop action uses the existing execution controls, including disabled/stopping states.
-- Refined navigation, semantic icons, light/dark appearance, reduced motion, visible clock and compact About.
-- Existing autosave, per-profile limits, cursor/text colors and browser-owned login sessions remain supported.
+- Setup recognizes publisher-signed installations in the selected folder and offers **Upgrade** after the system check.
+- New installations default to Qwen. Upgrades verify/repair the currently selected model without changing task settings or model selection; optional explicit model choices remain available.
+- English setup, Python-runtime diagnostics and completion/retry screens.
+- Reply candidates are refreshed after the main comment, with bounded discussion expansion and Like-before-Reply. Choose one random reply, a specified count or all loaded eligible comments (bounded at 100).
+- Per-comment receipts, uncertain-send protection and run deadlines remain enforced; optional Reply errors do not erase the main submitted-post count.
+- Refined reaction/browser badges, control spacing and text sizing preserve the approved workspace layout.
 
-Setup downloads **Qwen by default**, with DeepSeek, Vision and None choices. Weights download separately and are SHA-256 verified. Reload extension **3.2.0** after updating.
+Offline models download separately and are SHA-256 verified. Reload extension **3.2.0** after updating.
 
 Inbox remains off by default. Live Facebook/Business Suite layouts vary; complete Messenger delivery has not been verified. [Management guide](docs/MANAGEMENT.md).
 
@@ -41,7 +43,7 @@ Browser/website behavior may vary by version, account, permissions and Facebook 
 
 ## Get started
 
-1. Download **SilverZAgents-6.7.0-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.7.0 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.0-preview.1).
+1. Download **SilverZAgents-6.7.1-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.7.1 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.1-preview.1).
 2. Verify the download and run the installer. Internet access is required for missing Python/dependencies and the selected Offline model. See [installation](docs/INSTALL.md).
 3. Enable the included extension in each browser profile you intend to use. All profiles on that PC can use the same installed `extension` folder.
 4. Open a supported Facebook tab in your existing signed-in profile, configure a small task, and start the session yourself.
@@ -59,7 +61,7 @@ There are no bundled accounts or API keys. Facebook browser sessions remain in t
 
 ## Preview status
 
-6.7.0 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
+6.7.1 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
 
 Core Python modules are compiled and selected resources are encrypted; browser extension code remains inspectable. Code protection is not a guarantee against reverse engineering. Internal payload signatures are not a Windows Authenticode certificate; Windows may display publisher/reputation warnings. Confirm the source and checksum according to your organization's installation policy.
 
