@@ -2,17 +2,18 @@
 
 Ứng dụng Windows hỗ trợ cấu hình và theo dõi các tác vụ Facebook trên những hồ sơ trình duyệt bạn đã đăng nhập.
 
-**Đây là kho phân phối chính thức, không phải kho source mở.** Tải bộ cài `.exe` tại [Releases](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.1-preview.1). Các tệp “Source code” do GitHub tự tạo chỉ chứa tài liệu công khai của kho này.
+**Đây là kho phân phối chính thức, không phải kho source mở.** Tải bộ cài `.exe` tại [Releases](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.2-preview.1). Các tệp “Source code” do GitHub tự tạo chỉ chứa tài liệu công khai của kho này.
 
-## 6.7.1 Preview 1
+## 6.7.2 Preview 1 · Hotfix khởi động
 
-- Bộ cài hoàn toàn bằng English; nhận diện bản đã cài trong thư mục được chọn và hiển thị **Upgrade** sau khi kiểm tra.
-- Cài mới mặc định Qwen; nâng cấp giữ cấu hình và lựa chọn model hiện tại, kiểm tra/sửa tệp model thiếu. Vẫn có thể chọn model khác hoặc bỏ qua cài model.
-- Sửa luồng đọc lại bình luận sau khi comment bài, bấm Like bình luận trước Reply; lựa chọn ngẫu nhiên, theo số lượng hoặc tất cả bình luận phù hợp đã tải (giới hạn 100).
-- Giữ cơ chế chống gửi lại khi chưa rõ kết quả, điều kiện dừng và bộ đếm bài chính độc lập với Reply tùy chọn.
-- Giao diện đã duyệt: bổ sung badge cảm xúc/trình duyệt, cân chỉnh hàng, kích thước chữ và điều khiển.
+Sửa lỗi **brandIcons is not defined** của bộ cài 6.7.1 do thiếu tệp biểu tượng trong tài nguyên mã hóa.
 
-Model vẫn tải riêng, không nhúng vào EXE. Tải lại extension **3.2.0** sau khi cập nhật. Dừng công việc và thoát hẳn ứng dụng trước khi Upgrade.
+- Bổ sung đúng tài nguyên và thông báo bản quyền biểu tượng.
+- Bắt buộc kiểm tra giao diện đã biên dịch và danh mục tài nguyên trước đóng gói.
+- Giữ bộ cài English, nút **Upgrade**, cấu hình/dữ liệu và lựa chọn model hiện tại.
+- Không thay đổi nghiệp vụ hay thiết kế giao diện đã duyệt.
+
+Thoát hẳn Agent, chạy bộ cài 6.7.2, chọn đúng thư mục đã cài rồi bấm **Upgrade**. Không cần xóa dữ liệu hay hồ sơ trình duyệt. Model vẫn tải riêng, dùng lại cache đã xác thực. Tải lại extension **3.2.0** sau cập nhật.
 
 Đây là bản Preview. Khả năng hoạt động trên mọi máy và mọi giao diện Facebook chưa được chứng nhận; Messenger thực tế vẫn cần kiểm chứng thêm. [Cài đặt/model](INSTALL.md) · [Quản lý](MANAGEMENT.md).
 
@@ -27,7 +28,7 @@ Model vẫn tải riêng, không nhúng vào EXE. Tải lại extension **3.2.0*
 
 ## Cài đặt
 
-1. Tải `SilverZAgents-6.7.1-preview.1-Setup.exe` và `SHA256SUMS.txt`, kiểm tra mã SHA-256.
+1. Tải `SilverZAgents-6.7.2-preview.1-Setup.exe` và `SHA256SUMS.txt`, kiểm tra mã SHA-256.
 2. Chạy bộ cài, chọn thư mục riêng như `D:\Program Files\SilverZAgentsClient`. Cần Internet nếu thiếu runtime hoặc thư viện.
 3. Bộ cài dùng lại Python 3.14 x64 tương thích. Nếu chỉ có Python 3.15/nhánh khác, bộ cài giữ nguyên và có thể cài runtime riêng sau khi bạn chấp nhận giấy phép Python.
 4. Cài extension từ cùng một thư mục `extension` vào từng hồ sơ muốn dùng, kiểm tra bản **3.2.0**.
@@ -37,7 +38,7 @@ Xem [hướng dẫn chi tiết và cài bằng CMD](INSTALL.md). Bấm X chỉ t
 
 ## Trạng thái & dữ liệu
 
-Bản **6.7.1 Preview 1** đang được hoàn thiện. Đã kiểm thử tự động/mô phỏng; chưa nghiệm thu mọi PC khách và mọi giao diện Facebook thực tế. Không bảo đảm bình luận đã xuất hiện chỉ vì đã gửi Enter, cũng không bảo đảm bài được quản trị nhóm phê duyệt.
+Bản **6.7.2 Preview 1** đang được hoàn thiện. Đã kiểm thử tự động/mô phỏng; chưa nghiệm thu mọi PC khách và mọi giao diện Facebook thực tế. Không bảo đảm bình luận đã xuất hiện chỉ vì đã gửi Enter, cũng không bảo đảm bài được quản trị nhóm phê duyệt.
 
 Online gửi phần ngữ cảnh cần thiết tới API bạn chọn và có thể phát sinh phí theo nhà cung cấp. Offline suy luận tại máy sau khi tải model; Facebook vẫn cần mạng. Không kèm tài khoản hay API key. Hồ sơ và đăng nhập thuộc trình duyệt của người dùng. Chia sẻ thống kê kiến thức là tùy chọn, mặc định tắt; không có dịch vụ máy chủ đi kèm bản này.
 
