@@ -16,7 +16,7 @@ Get the `.exe` installer and `SHA256SUMS.txt` from [official Releases](https://g
 In PowerShell, from the download folder:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.7.0-preview.1-Setup.exe
+Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.7.1-preview.1-Setup.exe
 ```
 
 Compare the complete hash with `SHA256SUMS.txt`. This verifies that your download matches the published asset; it is not Windows publisher certification. Do not disable system protections to install the application.
@@ -27,19 +27,27 @@ Run the installer and choose a dedicated folder, for example `D:\Program Files\S
 
 The `.exe` is a bootstrap installer, not an offline bundle of Python, every dependency, model and browser. Allow time for downloads. Keep the installation log if setup fails; remove private details before sharing it.
 
+## Upgrade an existing client
+
+Setup is in **English**. Stop active jobs, stop the local model and exit SilverZAgents fully before upgrading. Select the **existing installation folder**. Setup recognizes its publisher-signed installation metadata and shows **Upgrade** after the system check.
+
+Upgrade retains application data, settings and the current model selection. The default **Keep current model · verify / repair files** option checks the existing model files and repairs missing downloads; an explicit different model choice changes the selected local model. **Skip model installation** skips this check. Downloads are separate from the EXE. Back up important data locally before updating.
+
+Do not select the developer source folder, delete the client data folder, or install into a browser profile directory. A missing/invalid installation manifest requires correcting the installation location or restoring the installation files.
+
 ## Command-line setup
 
 From Command Prompt, inspect the installer first:
 
 ```cmd
-SilverZAgents-6.7.0-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
-SilverZAgents-6.7.0-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.7.1-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.7.1-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
 ```
 
 For unattended installation, first review the [Python license](https://docs.python.org/3/license.html). The following flag explicitly accepts it if Python must be installed:
 
 ```cmd
-SilverZAgents-6.7.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
+SilverZAgents-6.7.1-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
 ```
 
 Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `--no-shortcut` skips the desktop shortcut. A zero exit code indicates successful setup; check the log for diagnosis or errors.
@@ -55,7 +63,7 @@ Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `
 The application does not import/export cookies, passwords or browser profiles. When idle/finished, the extension removes its own overlays and detaches debugging while retaining readiness for the next explicit run. Manual debugger cancellation requires a new start; restrictions/login/CAPTCHA may require you to intervene.
 
 ## Configure Page/Profile management
-Management requires extension **3.1.0**. Reload the extension in every participating browser profile, then assign the exact public Page/Profile URL and current actor identity under **Task → Interaction & Page/Profile management**. Start in **draft** mode with a small limit. Inbox remains off until deliberately enabled with the exact permitted inbox URL. The app does not switch Facebook identities. See the [management guide](MANAGEMENT.md) for bounds, privacy, and unsupported layouts.
+Management requires extension **3.2.0**. Reload the extension in every participating browser profile, then assign the exact public Page/Profile URL and current actor identity under **Task → Interaction & Page/Profile management**. Start in **draft** mode with a small limit. Inbox remains off until deliberately enabled with the exact permitted inbox URL. The app does not switch Facebook identities. See the [management guide](MANAGEMENT.md) for bounds, privacy, and unsupported layouts.
 ## Updates and troubleshooting
 
 - Stop active jobs and exit fully before updating. Do not delete `data` to update. Back up important application data locally first; never upload it to a public issue.
@@ -70,7 +78,7 @@ Management requires extension **3.1.0**. Reload the extension in every participa
 See [Support](../SUPPORT.md) for a sanitized bug-report checklist.
 
 
-## Offline model installation (6.7)
+## Offline model installation (6.7.1)
 
 Setup defaults to **Qwen3 4B** and finishes only after required runtime/model files are present and download checksums match. Model setup errors are visible in the installer log and fail installation; they must not appear as successful completion.
 
@@ -81,10 +89,10 @@ Setup defaults to **Qwen3 4B** and finishes only after required runtime/model fi
 | Vision | Gemma 3 4B, image projector and runtime |
 | None | No model download; existing selection retained |
 
-Use the model selector in graphical Setup, or add `--model qwen`, `--model deepseek`, `--model vision` or `--model none` in CMD. Omitting this flag selects Qwen. For example:
+Use the model selector in graphical Setup, or add `--model qwen`, `--model deepseek`, `--model vision` or `--model none` in CMD. Omitting this flag (or using `--model auto`) selects Qwen on a fresh installation and verifies/repairs the currently selected model on an upgrade, preserving its selection and task settings. For example:
 
 ```cmd
-start /wait "" SilverZAgents-6.7.0-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --model qwen --no-shortcut --log "D:\SilverZSetup-6.4.log"
+start /wait "" SilverZAgents-6.7.1-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --model qwen --no-shortcut --log "D:\SilverZSetup-6.7.1.log"
 echo Exit code: %ERRORLEVEL%
 ```
 
