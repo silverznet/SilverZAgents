@@ -1,5 +1,16 @@
 # Changelog
 
+## 6.7.1 Preview 1 — 2026-11-27
+
+- English installer and runtime diagnostics, with an explicit Upgrade action for signed installations at the chosen destination.
+- Fresh Qwen default; upgrade verifies/repairs the selected offline model while preserving existing configuration. Explicit model selection and skip remain available.
+- Preflight replacement-file checks ask users to close an active client before program files are replaced.
+- Reply discovery refreshed after the primary comment; broader accessible Reply/Like recognition and bounded discussion expansion.
+- Random/count/all-loaded Reply selection (maximum 100), per-comment receipts, uncertain-send guards and independent main-post counting.
+- Approved 6.7.1 interface refinements: reaction/browser badges, intrinsic control sizing, alignment and professional explanatory copy.
+- Extension remains 3.2.0. Manual updates; no hosted service or commercial activation added.
+
+
 ## 6.7.0 Preview 1 — 2026-11-25 · Big Update
 
 - Approved desktop presentation from 6.7.0-dev.4; existing business workflows retained.
