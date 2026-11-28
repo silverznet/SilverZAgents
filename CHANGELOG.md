@@ -1,5 +1,15 @@
 # Changelog
 
+## 6.7.3 Preview 1 — 2026-11-28 · Reply hotfix
+
+- Fix selected-comment grounding: the selected comment is now supplied as a comment source rather than post body while preferring a comment anchor.
+- Always finalize optional Reply surfaces, including rejected drafts or no eligible targets.
+- Restore the configured feed from the known post only, using verified navigation; preserve unrelated-page, draft, authentication and account-restriction guards.
+- Keep Like-before-Reply, no-replay receipts, per-comment limits and durable primary-post counts.
+- Agent-side fix; extension remains 3.2.0. Includes the previous protected-interface startup hotfix.
+- Live stop logs did not contain the actual changed URL; do not interpret synthetic regression coverage as full live-browser certification.
+
+
 ## 6.7.2 Preview 1 — 2026-11-27 · Startup hotfix
 
 - Fix protected-client startup error `brandIcons is not defined`: include the omitted brand_icons.js in the encrypted resource vault.
