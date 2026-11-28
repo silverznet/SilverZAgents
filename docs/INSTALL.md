@@ -2,7 +2,11 @@
 
 ## 6.7.1 startup error
 
-If 6.7.1 displays `brandIcons is not defined`, install **6.7.2 Preview 1** into the existing application folder and choose **Upgrade**. The previous protected package omitted an interface resource. Do not delete your data, reinstall browser profiles or manually replace signed application files.
+If 6.7.1 displays `brandIcons is not defined`, install **6.7.3 Preview 1** into the existing application folder and choose **Upgrade**. The previous protected package omitted an interface resource. Do not delete your data, reinstall browser profiles or manually replace signed application files.
+
+## Reply update in 6.7.3
+
+Stop jobs and exit the application fully, run the 6.7.3 Setup EXE and select your existing installation folder, then choose **Upgrade**. Optional Reply remains a user choice. Start with a small supervised run after upgrading. A stop caused by an unrelated page, an unsent draft or account verification still requires manual review; do not force repeated sends.
 
 ## Requirements
 
@@ -20,7 +24,7 @@ Get the `.exe` installer and `SHA256SUMS.txt` from [official Releases](https://g
 In PowerShell, from the download folder:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.7.2-preview.1-Setup.exe
+Get-FileHash -Algorithm SHA256 .\SilverZAgents-6.7.3-preview.1-Setup.exe
 ```
 
 Compare the complete hash with `SHA256SUMS.txt`. This verifies that your download matches the published asset; it is not Windows publisher certification. Do not disable system protections to install the application.
@@ -44,14 +48,14 @@ Do not select the developer source folder, delete the client data folder, or ins
 From Command Prompt, inspect the installer first:
 
 ```cmd
-SilverZAgents-6.7.2-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
-SilverZAgents-6.7.2-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.7.3-preview.1-Setup.exe --validate --dir "D:\Program Files\SilverZAgentsClient"
+SilverZAgents-6.7.3-preview.1-Setup.exe --diagnose --dir "D:\Program Files\SilverZAgentsClient"
 ```
 
 For unattended installation, first review the [Python license](https://docs.python.org/3/license.html). The following flag explicitly accepts it if Python must be installed:
 
 ```cmd
-SilverZAgents-6.7.2-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
+SilverZAgents-6.7.3-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --accept-python-license --log "D:\SilverZAgents-setup.log"
 ```
 
 Use `--python "D:\path\python.exe"` to nominate a compatible existing runtime. `--no-shortcut` skips the desktop shortcut. A zero exit code indicates successful setup; check the log for diagnosis or errors.
@@ -96,7 +100,7 @@ Setup defaults to **Qwen3 4B** and finishes only after required runtime/model fi
 Use the model selector in graphical Setup, or add `--model qwen`, `--model deepseek`, `--model vision` or `--model none` in CMD. Omitting this flag (or using `--model auto`) selects Qwen on a fresh installation and verifies/repairs the currently selected model on an upgrade, preserving its selection and task settings. For example:
 
 ```cmd
-start /wait "" SilverZAgents-6.7.2-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --model qwen --no-shortcut --log "D:\SilverZSetup-6.7.1.log"
+start /wait "" SilverZAgents-6.7.3-preview.1-Setup.exe --quiet --dir "D:\Program Files\SilverZAgentsClient" --model qwen --no-shortcut --log "D:\SilverZSetup-6.7.1.log"
 echo Exit code: %ERRORLEVEL%
 ```
 
