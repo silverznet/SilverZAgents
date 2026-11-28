@@ -10,16 +10,17 @@ SilverZAgents helps you configure and supervise repeatable Facebook tasks using 
 
 **This is the official distribution and documentation repository.** The proprietary application source is not published here. Download the protected Windows installer from **Releases**. GitHub's automatically generated “Source code” archives contain this repository's public documentation, not the application.
 
-## 6.7.2 Preview 1 · Startup hotfix
+## 6.7.3 Preview 1 · Reply hotfix
 
-**Users of 6.7.1 should upgrade to this hotfix.** It fixes the protected-client startup error `brandIcons is not defined`, caused by an omitted interface resource in the previous package.
+This update fixes selected-comment grounding for AI Reply and finalizes the discussion surface before the next feed item.
 
-- Includes the missing encrypted browser/reaction icon resource and its third-party attribution.
-- Adds mandatory compiled-interface browser checks and complete asset/module catalog validation before packaging.
-- Retains the English **Upgrade** installer, settings/data preservation and offline model verification.
-- Existing Reply behavior and the approved interface design remain unchanged.
+- Passes the selected comment as the actual comment source, so the grounded composer can use its comment anchor.
+- Finalizes the Reply surface even when no valid draft or eligible target is available.
+- Restores the configured feed only from the known post, using verified navigation. Unrelated navigation and unsent drafts still stop the job.
+- Retains per-comment receipts, no replay after uncertain sends, Like-before-Reply, and independent primary-post counts.
+- Includes the 6.7.2 protected-interface startup fix; English Upgrade, settings/model preservation and extension **3.2.0** remain.
 
-Stop the application fully, run the new Setup EXE and select your existing installation folder. Choose **Upgrade** after the system check. Offline models remain separate downloads; verified cached files are reused. Reload extension **3.2.0** after updating.
+The exact URL at the reported live client stop was not captured; targeted synthetic regressions cover sticky post URLs and safe return to the next feed item. Real Facebook/Cốc Cốc layouts still require supervised observation.
 
 Inbox remains off by default. Live Facebook/Business Suite layouts vary; complete Messenger delivery has not been verified. [Management guide](docs/MANAGEMENT.md).
 
@@ -41,7 +42,7 @@ Browser/website behavior may vary by version, account, permissions and Facebook 
 
 ## Get started
 
-1. Download **SilverZAgents-6.7.2-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.7.2 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.2-preview.1).
+1. Download **SilverZAgents-6.7.3-preview.1-Setup.exe** and **SHA256SUMS.txt** from the [6.7.3 Preview 1 release](https://github.com/silverznet/SilverZAgents/releases/tag/v6.7.3-preview.1).
 2. Verify the download and run the installer. Internet access is required for missing Python/dependencies and the selected Offline model. See [installation](docs/INSTALL.md).
 3. Enable the included extension in each browser profile you intend to use. All profiles on that PC can use the same installed `extension` folder.
 4. Open a supported Facebook tab in your existing signed-in profile, configure a small task, and start the session yourself.
@@ -59,7 +60,7 @@ There are no bundled accounts or API keys. Facebook browser sessions remain in t
 
 ## Preview status
 
-6.7.2 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
+6.7.3 Preview 1 is a **public preview**, not a production certification. Automated and simulated-browser tests have been run; complete validation on clean customer PCs and every real Facebook/browser combination is still pending. No claims of guaranteed reach, account safety, or uninterrupted compatibility are made.
 
 Core Python modules are compiled and selected resources are encrypted; browser extension code remains inspectable. Code protection is not a guarantee against reverse engineering. Internal payload signatures are not a Windows Authenticode certificate; Windows may display publisher/reputation warnings. Confirm the source and checksum according to your organization's installation policy.
 
